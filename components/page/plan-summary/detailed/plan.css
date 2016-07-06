@@ -1,0 +1,38 @@
+.cell .bd {
+  padding-bottom: 0px;
+}
+.weui_navbar {
+  z-index: 20000;
+}
+.weui_navbar .weui_navbar_item {
+  color: #8a8a8a;
+}
+.weui_navbar .weui_bar_item_on {
+  background: none;
+  color: #3176bc;
+  border-bottom: 6px solid #3176bc;
+}
+.weui_navbar .weui_navbar_item:after {
+  border-right: none;
+}
+.weui_navbar:after {
+  border-bottom: 1px solid #dadada;
+}
+.weui_media_box .plan-status {
+  margin-right: 5px;
+}
+.weui_media_box .plan-status .icon-dagou {
+  color: #69b950;
+}
+.weui_media_box .plan-status .yellow {
+  color: #e5be36;
+}
+.weui_media_box .plan-status .icon-bianji {
+  color: #7a8fd5;
+}
+.weui_media_box .plan-status .icon-guanbi {
+  color: #da2323;
+}
+.weui_media_box .plan-remark .icon-beizhu {
+  color: #7a8fd5;
+}

@@ -1,0 +1,66 @@
+.bd .weui_cells_bgcolor {
+  background-color: #f5f5f5;
+}
+.bd .font-color-01 {
+  color: #3176bc;
+}
+.bd .number-box {
+  background: #7a8fd5;
+  color: #fff;
+  width: 35px;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: inline-block;
+}
+.bd .weui_panel {
+  margin-top: 0px;
+}
+.bd .weui_panel:before {
+  border-top: none;
+}
+.bd .weui_media_box.weui_media_appmsg .weui_media_hd {
+  width: 45px;
+  height: 30px;
+  line-height: 30px;
+  z-index: 10000;
+}
+.bd .weui_media_box .weui_media_desc {
+  overflow: initial;
+  display: block;
+  line-height: 1.6em;
+}
+.bd .weui_panel_ft {
+  position: initial;
+  padding: 10px 10px 12px 10px;
+}
+.bd .weui_panel_ft:before {
+  border-top: none;
+}
+.bd .weui_panel_ft:after {
+  position: absolute;
+  top: 33px;
+  transform: rotate(45deg);
+}
+.bd .weui_media_box.weui_media_appmsg {
+  align-items: baseline;
+}
+.bd .time-line:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 32px;
+  height: 100%;
+  width: 3px;
+  background: #e7e7e7;
+  z-index: 100;
+}
+.bd .weui_media_box:before {
+  position: absolute;
+  left: 70px;
+}
+.bd .weui_media_box.weui_media_appmsg .weui_media_hd {
+  margin-right: 0.3em;
+}
