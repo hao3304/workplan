@@ -8,12 +8,15 @@ module.exports = Vue.extend({
     template:__inline("detailed.html"),
     //data: function () {
     //    return {
-    //        name:""
+    //        work:""
     //    }
     //},
     //route: {
     //    data: function () {
-    //        this.name = this.$route.params.name;
+    //        debugger
+    //        this.work = this.$route.params.work;
+    //
+    //
     //    }
     //}
 });
