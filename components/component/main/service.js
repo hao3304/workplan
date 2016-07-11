@@ -7,7 +7,7 @@
  * Created by jack on 16/6/14.
  */
 var prefix = "";
-//var prefix = "http://192.168.100.167:8086";
+var prefix = "http://192.168.100.167:8086";
 
 Date.prototype.Format = function (fmt) { //author: meizz
     var o = {

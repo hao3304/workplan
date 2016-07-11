@@ -34,7 +34,7 @@ router.redirect({
 
 router.map({
     "/home":{
-        component:require("page/home/home.js") /*首页*/
+        component:require("page/index/home.js") /*首页*/
     },
     "/plan":{
         component:require("page/plan/plan.js") /*工作计划*/
