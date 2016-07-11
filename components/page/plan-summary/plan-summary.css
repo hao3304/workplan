@@ -10,8 +10,10 @@
   margin-top: 10px;
 }
 .weui_grids .icon-home-style {
-  font-size: 30px;
-  color: #3176bc;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-top: 10px;
 }
 .weui_grids .radius {
   border: 1px solid #a2c1e1;

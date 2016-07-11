@@ -1,6 +1,5 @@
 .header-bar {
   position: fixed;
-  z-index: 90000;
   right: 0;
   left: 0;
   height: 44px;
@@ -52,4 +51,7 @@
 }
 .f-left {
   float: left;
+}
+.weui_cells_bgcolor .weui_cell_ft {
+  color: #420084;
 }

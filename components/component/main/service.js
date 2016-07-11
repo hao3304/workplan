@@ -7,7 +7,7 @@
  * Created by jack on 16/6/14.
  */
 var prefix = "";
-//var prefix = "http://192.168.100.104:8002";
+//var prefix = "http://192.168.100.167:8086";
 
 Date.prototype.Format = function (fmt) { //author: meizz
     var o = {
@@ -27,7 +27,7 @@ Date.prototype.Format = function (fmt) { //author: meizz
 
 function GetQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
-    var r = window.location.hash.split("?")[1].match(reg);
+    var r = window.location.search.split("?")[1].match(reg);
     if (r!=null) return (r[2]); return null;
 }
 
@@ -41,52 +41,61 @@ function co(callback){
     }
 }
 
-
 /**
- * 获取我的排班列表
- * @param p 查询参数
- * @param c 回调
+ * 获取组织架构
+ * @param p {Token:string,EndType:DP}
+ * @param c
  */
-function dutylist(p,c){
-    $.post(prefix +"/hd/sche/dutylist.json",p,co(c),"json")
+function getStructure(p,c){
+    $.post(prefix +"/hd/dep/structure.json",p,co(c),"json");
 }
 
 /**
- * 我的调班列表
+ * 月度计划查询接口
+ *
  * @param p
+ *   Token: string - 授权码 - 必填参数
+     Dep: string - 部门编号 - 必填参数
+     Month: string - 月份 2016-07 - 必填参数
  * @param c
  */
-function myList(p,c){
-    $.post(prefix+"/hd/sche/list.json",p,co(c),"json");
+function getPlan(p,c){
+    $.post(prefix +"/hd/plan/list.json",p,co(c),"json");
 }
 
+
 /**
- * 获取人员信息
+ * 月度指标查询接口
+ *
  * @param p
+ *   Token: string - 授权码 - 必填参数
+ Dep: string - 部门编号 - 必填参数
+ Month: string - 月份 2016-07 - 必填参数
  * @param c
  */
-function getInfo(p,c){
-    $.post(prefix+"/hd/token/info.json",p,co(c),"json");
+function getTarget(p,c){
+    $.post(prefix +"/hd/target/list.json", p,co(c),"json");
 }
 
 /**
- * 调班信息保存接口
- * @param p   action 1:申请调班 2: 审批调班 3:拒绝调班
+ * 月度计划完成情况查询接口
+ *
+ * @param p
+ *   Token: string - 授权码 - 必填参数
+ Dep: string - 部门编号 - 必填参数
+ Month: string - 月份 2016-07 - 必填参数
  * @param c
  */
-function save(p,c){
-    $.post(prefix+"/hd/sche/save.json",p,co(c),"json");
-}
-
-function detail(p,c){
-    $.post(prefix +"/hd/sche/detail.json",p,co(c),"json");
+function getResult(p,c){
+    $.post(prefix +"/hd/plan/result.json", p,co(c),"json");
 }
 
 module.exports = {
     GetQueryString:GetQueryString,
-    dutylist:dutylist,
-    myList:myList,
-    getInfo:getInfo,
-    save:save,
-    detail:detail
+    getStructure:getStructure,
+    getPlan:getPlan,
+    getTarget:getTarget,
+    getResult:getResult,
+    path:prefix
 };
+

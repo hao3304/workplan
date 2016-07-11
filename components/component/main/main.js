@@ -6,12 +6,14 @@ var Vue = require("component_modules/vue.js");
 var Router = require("component_modules/vue-router.js");
 var Service = require("main/service.js");
 
+Vue.component("loading",require("loading/index.js"));
+
 Vue.use(Router);
 
 
 Store = {
     uid:"",
-    //token:"575e45026da1e212e48c8ec3",
+    token:Service.GetQueryString("token"),
     showLoading:true
 };
 
@@ -23,10 +25,12 @@ var App = Vue.extend({
         }
     },
     ready: function () {
-        //this.token = Service.GetQueryString("token");
     }
 });
 
+router.redirect({
+    "/":"home"
+});
 
 router.map({
     "/home":{
@@ -35,19 +39,15 @@ router.map({
     "/plan":{
         component:require("page/plan/plan.js") /*工作计划*/
     },
-    "/detailed":{
+    "/detailed/:id":{
         component:require("page/plan/detailed/detailed.js") /*工作计划-详情*/
     },
     "/plan-summary":{
         component:require("page/plan-summary/plan-summary.js") /*工作计划总结*/
     },
-    "/target":{
-        component:require("page/plan-summary/detailed/target.js") /*工作计划总结-指标*/
-    },
-    "/target":{
-        component:require("page/plan-summary/detailed/plan.js") /*工作计划总结-指标*/
+    "/summary/:id":{
+        component:require("page/plan-summary/detailed/summary/summary.js") /*工作计划总结-指标*/
     }
-
     //"/work/:name":{
     //    component:require("page/work/work.js") /*调班审核列表*/
     //}
@@ -55,4 +55,28 @@ router.map({
 });
 
 router.start(App,'#app');
-router.go("/home");
+
+Vue.filter("getSrc", function (src) {
+   if(src){
+        return Service.path+src;
+   }else{
+       return null;
+   }
+});
+
+Vue.filter("state", function (s) {
+    switch  (parseInt(s)){
+        case 1:{
+            return "icon-dagou";
+        }break;
+        case 2:{
+            return "icon-dagou yellow";
+        }break;
+        case 3:{
+            return "icon-bianji";
+        }break;
+        case 4:{
+            return "icon-guanbi";
+        }break;
+    }
+});

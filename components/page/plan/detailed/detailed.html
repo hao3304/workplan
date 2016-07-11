@@ -1,84 +1,52 @@
 <div class="detailed">
     <header class="header-bar header-bar-nav">
         <a v-link="{path:'/plan'}" style="height: 44px; line-height: 44px;"><i class="iconfont icon-fanhui header-icon"></i></a>
-        <h1 class="header-title">工作计划</h1>
+        <h1 class="header-title">计划详情</h1>
     </header>
 
     <div class="container" id="container">
+
         <div class="cell container-padder">
             <div class="bd">
 
                 <div class="weui_cells weui_cells_access weui_cells_bgcolor">
-                    <a href="#" class="weui_cell">
-                        <div class="weui_cell_bd weui_cell_primary">
-                            <p class="blue-color">办公室 - 10月工作计划</p>
-                        </div>
-                        <div>
-                            <i class="iconfont icon-rili font-color-01" href="#"></i>
-                        </div>
-                    </a>
+                    <group>
+                        <datetime :title="detail.Dep" format="YYYY年MM月"  year-row="{value}年" month-row="{value}月" confirm-text="确认" cancel-text="取消" :value="month" @change="onChange" ></datetime>
+                    </group>
                 </div>
+                <div  style="position: absolute;width: 100%;top:88px;bottom: 0;overflow-y: auto"  v-show="detail.Plans.length>0&&!loading">
+                    <div class="weui_panel weui_panel_access" >
+                        <div class="weui_panel_bd time-line">
 
-                <div class="weui_panel weui_panel_access">
-                    <div class="weui_panel_bd time-line">
-
-                        <a class="weui_media_box weui_media_appmsg">
-                            <div class="weui_media_hd">
-                                <span class="number-box">1</span>
-                            </div>
-                            <div class="weui_media_bd" style="align-items:center;">
-                                <p class="weui_media_desc">
-                                    调研起草16年度工作思路。
-                                </p>
-                            </div>
-                            <div class="weui_panel_ft"></div>
-                        </a>
-
-                        <a class="weui_media_box weui_media_appmsg">
-                            <div class="weui_media_hd">
-                                <span class="number-box">2</span>
-                            </div>
-                            <div class="weui_media_bd" style="align-items:center;">
-                                <p class="weui_media_desc">
-                                    计划完成玉山路给水工程竣工移交；完成都泗门路（平江路-五泄路）、胜利东路（平江路—西施山路）、五泄路（云东路-西施山路）、金川路（凤林西路--御景半岛小区西入口）给水工程通水移交；计划完成下埠街、南池路试压及环城西路（体育路—洋江路）给水工程冲洗、消毒工作；继续做好迪荡湖公园环湖路一期，马海路（袍中路-越东路）道路拓宽工程
-                                </p>
-                            </div>
-                            <i class="weui_panel_ft"></i>
-                        </a>
-
-                        <a class="weui_media_box weui_media_appmsg">
-                            <div class="weui_media_hd">
-                                <span class="number-box">3</span>
-                            </div>
-                            <div class="weui_media_bd" style="align-items:center;">
-                                <p class="weui_media_desc">
-                                    开展员工工作日志试运行工作。
-                                </p>
-                            </div>
-                            <i class="weui_panel_ft"></i>
-                        </a>
-
-                        <a class="weui_media_box weui_media_appmsg">
-                            <div class="weui_media_hd">
-                                <span class="number-box">4</span>
-                            </div>
-                            <div class="weui_media_bd" style="align-items:center;">
-                                <p class="weui_media_desc">
-                                    开展员工工作日志试运行工作。
-                                </p>
-                            </div>
-                            <i class="weui_panel_ft"></i>
-                        </a>
-
-
+                            <a class="weui_media_box weui_media_appmsg" v-for="p in detail.Plans">
+                                <div class="weui_media_hd">
+                                    <span class="number-box">{{$index+1}}</span>
+                                </div>
+                                <div class="weui_media_bd" style="align-items:center;">
+                                    <p class="weui_media_desc">
+                                        {{p}}
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-
                 </div>
 
 
+                <div class="msg" style="background-color: #fbf9fe" v-else>
+                    <div class="weui_msg">
+                        <div class="weui_icon_area"><i class="weui_icon_info weui_icon_msg"></i></div>
+                        <div class="weui_text_area">
+                            <h2 class="weui_msg_title">温馨提示</h2>
+                            <p class="weui_msg_desc">当前月份暂无工作计划</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+
     </div>
 
-
+    <loading :show="loading" :text="text" ></loading>
 </div>

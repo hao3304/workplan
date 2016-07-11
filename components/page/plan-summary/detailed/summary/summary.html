@@ -1,0 +1,40 @@
+<div class="target">
+    <header class="header-bar header-bar-nav">
+        <a v-link="{path:'/plan-summary'}" style="height: 44px; line-height: 44px;"><i class="iconfont icon-fanhui header-icon"></i></a>
+        <h1 class="header-title">工作计划总结</h1>
+    </header>
+
+    <div class="container" id="container">
+        <div class="cell container-padder" style="padding-bottom:70px;">
+            <div class="bd">
+
+                <div class="weui_cells weui_cells_access weui_cells_bgcolor">
+                    <group>
+                        <datetime :title="detail.Dep" format="YYYY年MM月"  year-row="{value}年" month-row="{value}月" confirm-text="确认" cancel-text="取消" :value="month" @change="onChange" ></datetime>
+                    </group>
+                </div>
+
+
+                <div :is="view" :dep="Dep" :month="month" ></div>
+
+            </div>
+        </div>
+
+
+        <div class="weui_tabbar">
+            <a @click="onChangeView('target')" class="weui_tabbar_item" :class="{weui_bar_item_on:view=='target'}">
+                <div class="weui_tabbar_icon" style="text-align: center;">
+                    <i class="iconfont icon-zhibiao"></i>
+                </div>
+                <p class="weui_tabbar_label">指标</p>
+            </a>
+            <a @click="onChangeView('plan')"  class="weui_tabbar_item"  :class="{weui_bar_item_on:view=='plan'}">
+                <div class="weui_tabbar_icon" style="text-align: center;">
+                    <i class="iconfont icon-gongzuojihua"></i>
+                </div>
+                <p class="weui_tabbar_label">计划</p>
+            </a>
+        </div>
+    </div>
+
+</div>

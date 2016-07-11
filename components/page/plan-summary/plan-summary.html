@@ -8,140 +8,17 @@
         <div class="cell container-padder">
             <div class="bd">
                 <div class="weui_grids">
-                    <a v-link="{path:'/target'}" class="weui_grid">
+                    <a v-link="{path:'/summary/'+l.Id}" class="weui_grid" v-for="l in list">
                         <div class="weui_grid_icon">
 			            	<span class="radius">
-			            		<i class="iconfont icon-bangongshi icon-home-style"></i>
+			            		<img class="iconfont  icon-home-style" :src="l.Icon|getSrc" v-if="l.Icon" />
+                                <i class="iconfont icon-zhongdian  icon-home-style" style="margin-top: 0;font-size: 30px;color: #3176bc" v-else></i>
 			            	</span>
                         </div>
                         <p class="weui_grid_label">
-                            办公室
+                            {{l.Name}}
                         </p>
                     </a>
-
-                    <a href="#/button" class="weui_grid">
-                        <div class="weui_grid_icon">
-			            	<span class="radius">
-			            		<i class="iconfont icon-caiwu icon-home-style"></i>
-			            	</span>
-                        </div>
-                        <p class="weui_grid_label">
-                            财务处
-                        </p>
-                    </a>
-
-                    <a href="#/button" class="weui_grid">
-                        <div class="weui_grid_icon">
-			            	<span class="radius">
-			            		<i class="iconfont icon-guanwang icon-home-style"></i>
-			            	</span>
-                        </div>
-                        <p class="weui_grid_label">
-                            管网处
-                        </p>
-                    </a>
-
-                    <a href="#/button" class="weui_grid">
-                        <div class="weui_grid_icon">
-			            	<span class="radius">
-			            		<i class="iconfont icon-xinxichu icon-home-style"></i>
-			            	</span>
-                        </div>
-                        <p class="weui_grid_label">
-                            信息处
-                        </p>
-                    </a>
-
-                    <a href="#/button" class="weui_grid">
-                        <div class="weui_grid_icon">
-			            	<span class="radius">
-			            		<i class="iconfont icon-gongcheng icon-home-style"></i>
-			            	</span>
-                        </div>
-                        <p class="weui_grid_label">
-                            工程处
-                        </p>
-                    </a>
-
-                    <a href="#/button" class="weui_grid">
-                        <div class="weui_grid_icon">
-			            	<span class="radius">
-			            		<i class="iconfont icon-zhongdian icon-home-style"></i>
-			            	</span>
-                        </div>
-                        <p class="weui_grid_label">
-                            重点办
-                        </p>
-                    </a>
-
-                    <a href="#/button" class="weui_grid">
-                        <div class="weui_grid_icon">
-			            	<span class="radius">
-			            		<i class="iconfont icon-jiancha icon-home-style"></i>
-			            	</span>
-                        </div>
-                        <p class="weui_grid_label">
-                            营业监察处
-                        </p>
-                    </a>
-
-                    <a href="#/button" class="weui_grid">
-                        <div class="weui_grid_icon">
-			            	<span class="radius">
-			            		<i class="iconfont icon-anbao icon-home-style"></i>
-			            	</span>
-                        </div>
-                        <p class="weui_grid_label">
-                            安保处
-                        </p>
-                    </a>
-
-                    <a href="#/button" class="weui_grid">
-                        <div class="weui_grid_icon">
-			            	<span class="radius">
-			            		<i class="iconfont icon-ercigongshui icon-home-style"></i>
-			            	</span>
-                        </div>
-                        <p class="weui_grid_label">
-                            二次供水分公司
-                        </p>
-                    </a>
-
-                    <a href="#/button" class="weui_grid">
-                        <div class="weui_grid_icon">
-			            	<span class="radius">
-			            		<i class="iconfont icon-gongsi icon-home-style"></i>
-			            	</span>
-                        </div>
-                        <p class="weui_grid_label">
-                            越城分公司
-                        </p>
-                    </a>
-
-                    <a href="#/button" class="weui_grid">
-                        <div class="weui_grid_icon">
-			            	<span class="radius">
-			            		<i class="iconfont icon-gongsi icon-home-style"></i>
-			            	</span>
-                        </div>
-                        <p class="weui_grid_label">
-                            袍江分公司
-                        </p>
-                    </a>
-
-                    <a href="#/button" class="weui_grid">
-                        <div class="weui_grid_icon">
-			            	<span class="radius">
-			            		<i class="iconfont icon-gongsi icon-home-style"></i>
-			            	</span>
-                        </div>
-                        <p class="weui_grid_label">
-                            城东分公司
-                        </p>
-                    </a>
-
-
-
                 </div>
             </div>
         </div>

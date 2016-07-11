@@ -2,7 +2,7 @@
  * Created by jack on 16/6/4.
  */
 
-fis.set("path","work");
+fis.set("path","/static/apps/plan");
 
 
 fis.hook("module",{
