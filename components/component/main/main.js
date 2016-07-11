@@ -70,7 +70,7 @@ Vue.filter("state", function (s) {
             return "icon-dagou";
         }break;
         case 2:{
-            return "icon-dagou yellow";
+            return "icon-yuanquan yellow";
         }break;
         case 3:{
             return "icon-bianji";

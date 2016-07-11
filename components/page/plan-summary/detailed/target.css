@@ -7,6 +7,25 @@
 .bd .sum-textcolor {
   color: #9c9c9c;
 }
+.bd .vux-no-group-title {
+  background: none;
+}
+.bd .vux-datetime-value {
+  color: #029DE0;
+}
+.bd .uvx-cell-title {
+  background: #acc1d7;
+}
+.bd .uvx-cell-title .weui_label {
+  color: #fff;
+}
+.bd .uvx-cell-title .sum-textcolor {
+  color: #fff;
+}
+.bd .weui_bar_item_on {
+  background: none;
+  color: #3176bc;
+}
 .container .weui_tabbar {
   background: #252e38;
   padding-bottom: 5px;
